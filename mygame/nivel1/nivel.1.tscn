@@ -1,0 +1,154 @@
+[gd_scene load_steps=15 format=3 uid="uid://dgq8s2dgto538"]
+
+[ext_resource type="Texture2D" uid="uid://cr2j1xv2rlfxn" path="res://mapa/fondo.png" id="1_ju2xp"]
+[ext_resource type="PackedScene" uid="uid://6yykqfcn1iu7" path="res://ecenas/plataforma1.tscn" id="1_ok3pa"]
+[ext_resource type="PackedScene" uid="uid://dm3sjs04e8mkp" path="res://ecenas/object.tscn" id="2_djjj2"]
+[ext_resource type="PackedScene" uid="uid://clwy0xyofwkja" path="res://ecenas/jugador.tscn" id="3_khnr4"]
+[ext_resource type="Texture2D" uid="uid://b8bda3oas01w8" path="res://mapa/ocean.png" id="5_pdqep"]
+[ext_resource type="Texture2D" uid="uid://bawju1o02tugl" path="res://mapa/serpiente.png" id="6_vlx6v"]
+[ext_resource type="Texture2D" uid="uid://cabk4ad47wcxs" path="res://mapa/cabezacoco.png" id="7_pdqep"]
+[ext_resource type="Texture2D" uid="uid://dgrb6m30g3571" path="res://mapa/cabezaderecha.png" id="7_vlx6v"]
+[ext_resource type="PackedScene" uid="uid://cn136jshokpjg" path="res://ecenas/suelo.tscn" id="8_alhch"]
+[ext_resource type="Script" uid="uid://c8ebovowfr17s" path="res://codigos/jugador.gd" id="9_nots6"]
+[ext_resource type="Texture2D" uid="uid://62fclf8tte8c" path="res://mapa/hingo1.png" id="11_0qtfc"]
+[ext_resource type="PackedScene" uid="uid://d1oelx6outgwc" path="res://ecenas/plataforma2.tscn" id="12_vkev3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_alhch"]
+size = Vector2(2819, 278)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0qtfc"]
+radius = 57.0
+height = 132.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Fondo" type="Sprite2D" parent="."]
+position = Vector2(781, 134)
+scale = Vector2(4.66602, 1.20313)
+texture = ExtResource("1_ju2xp")
+
+[node name="Area2D" parent="." instance=ExtResource("1_ok3pa")]
+position = Vector2(88, 264)
+
+[node name="Area2D2" parent="." instance=ExtResource("1_ok3pa")]
+position = Vector2(247, 207)
+
+[node name="Area2D3" parent="." instance=ExtResource("1_ok3pa")]
+position = Vector2(420, 153)
+
+[node name="Area2D4" parent="." instance=ExtResource("1_ok3pa")]
+position = Vector2(628, 287)
+
+[node name="Area2D5" parent="." instance=ExtResource("1_ok3pa")]
+position = Vector2(813, 230)
+
+[node name="Area2D6" parent="." instance=ExtResource("2_djjj2")]
+position = Vector2(262, 151)
+
+[node name="Area2D7" parent="." instance=ExtResource("2_djjj2")]
+position = Vector2(435, 105)
+
+[node name="Area2D8" parent="." instance=ExtResource("2_djjj2")]
+position = Vector2(642, 218)
+
+[node name="Area2D9" parent="." instance=ExtResource("2_djjj2")]
+position = Vector2(834, 161)
+
+[node name="Ocean" type="Sprite2D" parent="."]
+position = Vector2(587.5, 550)
+scale = Vector2(3.93262, 0.412109)
+texture = ExtResource("5_pdqep")
+
+[node name="Serpiente" type="Sprite2D" parent="."]
+position = Vector2(903, 409)
+scale = Vector2(0.220703, 0.134522)
+texture = ExtResource("6_vlx6v")
+
+[node name="Serpiente2" type="Sprite2D" parent="."]
+position = Vector2(1326, 566)
+scale = Vector2(0.40625, 0.253174)
+texture = ExtResource("6_vlx6v")
+
+[node name="Serpiente3" type="Sprite2D" parent="."]
+position = Vector2(-55, 434)
+scale = Vector2(0.235596, 0.140381)
+texture = ExtResource("6_vlx6v")
+
+[node name="Serpiente4" type="Sprite2D" parent="."]
+position = Vector2(-288, 579)
+scale = Vector2(0.505859, 0.358887)
+texture = ExtResource("6_vlx6v")
+
+[node name="Cabezacoco" type="Sprite2D" parent="."]
+position = Vector2(369, 483)
+scale = Vector2(0.152995, 0.148193)
+texture = ExtResource("7_pdqep")
+
+[node name="Cabezacoco2" type="Sprite2D" parent="."]
+position = Vector2(789.5, 562.375)
+scale = Vector2(0.277995, 0.149658)
+texture = ExtResource("7_pdqep")
+
+[node name="Cabezaderecha" type="Sprite2D" parent="."]
+position = Vector2(117.75, 610)
+scale = Vector2(0.215332, 0.248047)
+texture = ExtResource("7_vlx6v")
+
+[node name="Cabezaderecha2" type="Sprite2D" parent="."]
+position = Vector2(1376, 385)
+scale = Vector2(0.175781, 0.187744)
+texture = ExtResource("7_vlx6v")
+
+[node name="Cabezaderecha3" type="Sprite2D" parent="."]
+position = Vector2(1842, 493)
+scale = Vector2(0.408203, 0.223633)
+texture = ExtResource("7_vlx6v")
+
+[node name="Ocean2" type="Sprite2D" parent="."]
+position = Vector2(728, 698.375)
+scale = Vector2(2.74219, 0.161377)
+texture = ExtResource("5_pdqep")
+
+[node name="Area2D10" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D10"]
+position = Vector2(729.5, 634)
+shape = SubResource("RectangleShape2D_alhch")
+debug_color = Color(0.728633, 0.571485, 0.441571, 0.42)
+
+[node name="Area2D11" parent="." instance=ExtResource("8_alhch")]
+position = Vector2(-740, 196)
+
+[node name="Node2D" parent="." instance=ExtResource("3_khnr4")]
+position = Vector2(-609, 205)
+script = ExtResource("9_nots6")
+
+[node name="Area2D12" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D12"]
+position = Vector2(1991, -1)
+scale = Vector2(0.175781, 0.15625)
+texture = ExtResource("11_0qtfc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D12"]
+position = Vector2(1992, 1)
+shape = SubResource("CapsuleShape2D_0qtfc")
+debug_color = Color(0.727038, 0.406826, 0.646946, 0.42)
+
+[node name="Area2D13" parent="." instance=ExtResource("12_vkev3")]
+position = Vector2(1041, 175)
+tipo = 2
+
+[node name="Area2D14" parent="." instance=ExtResource("12_vkev3")]
+position = Vector2(1308, 103)
+tipo = 2
+
+[node name="Area2D15" parent="." instance=ExtResource("1_ok3pa")]
+position = Vector2(1539, 217)
+
+[node name="Area2D16" parent="." instance=ExtResource("12_vkev3")]
+position = Vector2(1819, 158)
+tipo = 2
+
+[connection signal="body_entered" from="Area2D10" to="Node2D" method="_on_area_2d_10_body_entered"]
+[connection signal="body_entered" from="Area2D12" to="Node2D" method="_on_area_2d_12_body_entered"]

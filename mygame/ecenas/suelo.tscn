@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://cn136jshokpjg"]
+
+[ext_resource type="Texture2D" uid="uid://dfdqfeigsufp0" path="res://mapa/suelo1.png" id="1_5ngjr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jnxia"]
+size = Vector2(625, 38.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ngjr"]
+size = Vector2(626.5, 33)
+
+[node name="Area2D" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(376.5, 123.5)
+scale = Vector2(0.709961, 0.149414)
+texture = ExtResource("1_5ngjr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(379, 102)
+shape = SubResource("RectangleShape2D_jnxia")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(86, 243)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(291.75, -100)
+shape = SubResource("RectangleShape2D_5ngjr")
+debug_color = Color(0.938382, 0.209235, 0.349597, 0.42)

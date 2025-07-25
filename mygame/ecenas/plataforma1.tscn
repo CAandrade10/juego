@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://6yykqfcn1iu7"]
+
+[ext_resource type="Texture2D" uid="uid://ddjlk2ax3os0h" path="res://mapa/plataforma0.1.png" id="1_tucl5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fyhj0"]
+size = Vector2(90, 14.7188)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3is7k"]
+size = Vector2(89.5, 16.875)
+
+[node name="Area2D" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(11, 6)
+scale = Vector2(0.102539, 0.0844727)
+texture = ExtResource("1_tucl5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(11, -1)
+shape = SubResource("RectangleShape2D_fyhj0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(11.25, 15.5625)
+shape = SubResource("RectangleShape2D_3is7k")
+debug_color = Color(0.829994, 0.305172, 0.636653, 0.42)

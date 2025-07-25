@@ -1,0 +1,110 @@
+[gd_scene load_steps=11 format=3 uid="uid://bbuos0sm42tlw"]
+
+[ext_resource type="Texture2D" uid="uid://cgeqoha0cw2k4" path="res://mapa/espacio2.png" id="1_r7urm"]
+[ext_resource type="PackedScene" uid="uid://veg7kga8sgg6" path="res://ecenas/suelo2.tscn" id="1_rf7po"]
+[ext_resource type="PackedScene" uid="uid://clwy0xyofwkja" path="res://ecenas/jugador.tscn" id="2_c1hse"]
+[ext_resource type="Texture2D" uid="uid://yd5vfxvrkmuq" path="res://mapa/espacio.png" id="2_xso68"]
+[ext_resource type="Script" uid="uid://dvedaaw5vv12g" path="res://codigos/jugador.2gd.gd" id="5_r7urm"]
+[ext_resource type="PackedScene" uid="uid://d1oelx6outgwc" path="res://ecenas/plataforma2.tscn" id="6_ktjdc"]
+[ext_resource type="Texture2D" uid="uid://cqx4vynyovjnm" path="res://mapa/doorespace.png" id="7_xso68"]
+[ext_resource type="PackedScene" uid="uid://dm3sjs04e8mkp" path="res://ecenas/object.tscn" id="8_3ctgq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dvxht"]
+size = Vector2(5881, 384)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ctgq"]
+size = Vector2(218, 214)
+
+[node name="Level2" type="Node2D"]
+
+[node name="Area2D11" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D11"]
+position = Vector2(1895, 205)
+scale = Vector2(5.77539, 1.97852)
+texture = ExtResource("1_r7urm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D11"]
+position = Vector2(1899.5, 994)
+shape = SubResource("RectangleShape2D_dvxht")
+debug_color = Color(0.964136, 0.898412, 0.95415, 0.42)
+
+[node name="Espacio" type="Sprite2D" parent="Area2D11"]
+position = Vector2(1903, 779)
+texture = ExtResource("2_xso68")
+
+[node name="Espacio2" type="Sprite2D" parent="Area2D11"]
+position = Vector2(-131.5, -73.5)
+scale = Vector2(1.80762, 1.25684)
+texture = ExtResource("2_xso68")
+
+[node name="Area2D" parent="." instance=ExtResource("1_rf7po")]
+position = Vector2(175, 209)
+
+[node name="Area2D2" parent="." instance=ExtResource("1_rf7po")]
+position = Vector2(451, 209)
+
+[node name="Area2D3" parent="." instance=ExtResource("1_rf7po")]
+position = Vector2(721, 211)
+
+[node name="Area2D4" parent="." instance=ExtResource("1_rf7po")]
+position = Vector2(986, 212)
+
+[node name="Area2D5" parent="." instance=ExtResource("6_ktjdc")]
+position = Vector2(1318, 288)
+
+[node name="Area2D6" parent="." instance=ExtResource("6_ktjdc")]
+position = Vector2(1554, 190)
+
+[node name="Area2D7" parent="." instance=ExtResource("6_ktjdc")]
+position = Vector2(1794, 112)
+
+[node name="Area2D8" parent="." instance=ExtResource("1_rf7po")]
+position = Vector2(2168, -119)
+
+[node name="Area2D9" parent="." instance=ExtResource("1_rf7po")]
+position = Vector2(2448, -122)
+
+[node name="Area2D10" parent="." instance=ExtResource("1_rf7po")]
+position = Vector2(2721, -130)
+
+[node name="Espacio" type="Sprite2D" parent="."]
+position = Vector2(3908, 240.5)
+scale = Vector2(1.91406, 1.84668)
+texture = ExtResource("2_xso68")
+
+[node name="Area2D12" parent="." instance=ExtResource("6_ktjdc")]
+position = Vector2(3139, 41)
+
+[node name="Area2D13" parent="." instance=ExtResource("6_ktjdc")]
+position = Vector2(3422, 48)
+
+[node name="Area2D14" parent="." instance=ExtResource("1_rf7po")]
+position = Vector2(3852, -133)
+
+[node name="Area2D15" parent="." instance=ExtResource("1_rf7po")]
+position = Vector2(4135, -133)
+
+[node name="Personaje" parent="." instance=ExtResource("2_c1hse")]
+position = Vector2(84, 269)
+script = ExtResource("5_r7urm")
+
+[node name="Area2D16" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D16"]
+position = Vector2(4146, -122)
+scale = Vector2(0.302734, 0.229004)
+texture = ExtResource("7_xso68")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D16"]
+position = Vector2(4143, -121)
+shape = SubResource("RectangleShape2D_3ctgq")
+
+[node name="Area2D17" parent="." instance=ExtResource("8_3ctgq")]
+position = Vector2(3415, -52)
+
+[node name="Area2D18" parent="." instance=ExtResource("8_3ctgq")]
+position = Vector2(3798, -96)
+
+[connection signal="body_entered" from="Area2D11" to="Personaje" method="_on_area_2d_11_body_entered"]
+[connection signal="body_entered" from="Area2D16" to="Personaje" method="_on_area_2d_16_body_entered"]

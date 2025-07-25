@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://clwy0xyofwkja"]
+
+[ext_resource type="Script" uid="uid://b3u7nxfbg7ssy" path="res://codigos/character_body_2d.gd" id="1_hcovy"]
+[ext_resource type="Texture2D" uid="uid://bnavph34b0gmc" path="res://personaje/Copilot_20250725_001438.png" id="1_inutu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f8m81"]
+radius = 33.2415
+
+[node name="Personaje" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_hcovy")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(-16.1945, 35.0877)
+rotation = -3.11613
+scale = Vector2(-0.0672944, -0.0776963)
+texture = ExtResource("1_inutu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-16, 38)
+shape = SubResource("CircleShape2D_f8m81")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+zoom = Vector2(0.7, 0.7)
+
+[node name="UI_Puntaje" type="Label" parent="."]
+offset_left = 2565.0
+offset_top = -353.0
+offset_right = 3016.0
+offset_bottom = -181.0
+text = "puntaje:"

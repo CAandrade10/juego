@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://veg7kga8sgg6"]
+
+[ext_resource type="Texture2D" uid="uid://bnjwtw7bwjo67" path="res://mapa/lunar.png" id="1_53tqh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ei20s"]
+size = Vector2(279.25, 39.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m6id1"]
+size = Vector2(285.188, 49)
+
+[node name="Area2D" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-17, 113)
+scale = Vector2(0.29541, 0.267578)
+texture = ExtResource("1_53tqh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-15.375, 150.875)
+shape = SubResource("RectangleShape2D_ei20s")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="CollisionShape2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D/StaticBody2D"]
+position = Vector2(0.96875, 45.125)
+shape = SubResource("RectangleShape2D_m6id1")
+debug_color = Color(0.770164, 0.242005, 0.320969, 0.42)
